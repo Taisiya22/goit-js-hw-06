@@ -1,26 +1,50 @@
-const form = document.querySelector('form');
+// const form = document.querySelector('form');
+
+// form.addEventListener('submit', onFormSubmit);
+
+// function onFormSubmit(event) { 
+//     event.preventDefault();
+
+//     const email = event.currentTarget.elements.email.value;
+//     const password = event.currentTarget.elements.password.value;
+
+//     if (!email || !password) { 
+//         alert("Please fill all fields");  
+//     }
+
+//     const value = {
+//          email,
+//          password
+//     }
+
+//     console.log(value);
+     
+//    event.currentTarget.reset();
+    
+// }
 
 
-form.addEventListener('submit', onFormSubmit);
+const form = document.querySelector("form");
 
-function onFormSubmit(event) { 
-    event.preventDefault();
+form.addEventListener("submit", handleSubmit);
 
-    const email = event.currentTarget.elements.email.value;
-    const password = event.currentTarget.elements.password.value;
+function handleSubmit(event) {
+  event.preventDefault();
+  const {
+    elements: { email, password }
+  } = event.currentTarget;
 
-    if (!email || !password) { 
-        alert("Please fill all fields");  
-    }
-
-    const value = {
-         email,
-         password
+  if (!email.value || !password.value) {
+    return alert("Please fill in all the fields!");
+  }
+const value = {
+         email: email.value,
+         password: password.value
     }
 
     console.log(value);
-    event.currentTarget.reset(); 
+     
  
+  event.currentTarget.reset();
 }
-
 
