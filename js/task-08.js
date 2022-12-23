@@ -43,8 +43,15 @@ const value = {
     }
 
     console.log(value);
+  
+  // const formdata = new FormData(event.currentTarget);
+  // formdata.forEach((value, name) => {
+  //   console.log(name);
+  //   console.log(value);
+      
+  // })
      
- 
+  
   event.currentTarget.reset();
 }
 
